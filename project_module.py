@@ -1,4 +1,4 @@
-import  datetime
+import  datetime,time
 import math 
 import random
 import uuid
@@ -6,26 +6,27 @@ import string
 from file_module import *
 
 while True:
-    print("welcome to multi-utility tullkit ")
-    print("choose a open ")
-    print("1.datetime and time operation")
-    print("2.Mathematical operation")
-    print("3.random data generation")
-    print("4.Generate Unique Identifier (uuid)")
-    print("5.file operations (custom module)")
-    print("6.explore module Attribute (dir())")
-    print("7.Exit")
-    choice1=int(input("enter the first input"))
+    print("WELCOME TO MULTI-UTILITY TULLKIT ")
+    print("CHOOSE A OPTION ")
+    print("1.DATETIME AND TIME OPEATION")
+    print("2.MATHEMATICAL OPERATION")
+    print("3.RANDOM DATA GENERATION")
+    print("4.GENERATE UNIQUE IDENTIFIER (UUID)")
+    print("5.FILE OPERATIONS (CUSTOM MODULE)")
+    print("6.EXPLORE MODULE ATTRIBUTE (DIR())")
+    print("7.EXIT")
+    choice1=int(input("ENTER THE  CHOICE::"))
     match choice1:
         case 1:
             while True:
-                print("Display current date and time")
-                print("calculate diffrence betwwen two dates/times")
-                print("format date into custom format")
-                print("stopwatch")
-                print("countdown Timer")
-                print("back to main menu")
-                choice2=int(input("enter the choice"))
+                print("CHOOSE A OPTION ")
+                print("1.DISPLAY CURRENT TIME AND DATE")
+                print("2.CALCULATE DIFFERENCE BETWEEN TWO TIME/DATE")
+                print("3.FORMAT DATE INTO CUSTOM DATE")
+                print("4.STOPWATCH")
+                print("5.COUNDDOWN")
+                print("6.BACK TO MAIN MENU")
+                choice2=int(input("ENTER THE CHOICE::"))
 
                 match choice2:
                     case 1:
@@ -48,22 +49,41 @@ while True:
                         custom_date=datetime.datetime(year,month,day,hour,minute,second)
                         print("custom date ::",custom_date)
                     case 4:
-                        print("")
+                       input("Press ENTER to start...")
+                       start = datetime.datetime.now()
+                       input("Press ENTER to stop...")
+                       stop = datetime.datetime.now()
+                       elapsed = stop - start
+                       total = int(elapsed.total_seconds())
+                       hours = total // 3600
+                       minutes = (total % 3600) // 60
+                       seconds = total % 60    
+                       print(f"Time: {hours:02}:{minutes:02}:{seconds:02}")
                     case 5:
-                        print("")
+                        count_time=int(input("ENTER THE  COUNTDOWN TIME  ::"))
+                        i=count_time
+                        while True:
+                         if i<=count_time:
+                           print(f"remianig time:{i} seconds")
+                           time.sleep(1)
+                           i-=1
+                           if i==0:
+                            break
+                        print("Time's UP!!")
                     case 6:
+                        print("THANK YOU FOR USING DATE AND TIME MODULE")
                         break
                         
 
                 
         case 2:
             while True:
-                print("1.calculate factorial")
-                print("2.solve compound interest")
-                print("3.trigonometric calculations")
-                print("4.area of geometric shapes")
-                print("5.back to main menu")
-                choice3=int(input("enter the choice"))
+                print("1.CALCULATE FACTORIAL")
+                print("2.COMPOUND INTEREST")
+                print("3.TRIGNOMETRIC CALCULATUIONS")
+                print("4.AREA OF GEOGRAPHIC SHAPES")
+                print("5.BACK TO MAIN MENU")
+                choice3=int(input("ENTER THE CHOICE::"))
                 match choice3:
                     case 1:
                         number=int(input("input the number for calculate the factorial:"))
@@ -90,9 +110,10 @@ while True:
                     case 4:
                         while True:
                             print("1.calculate square")
-                            print("1.calculate circle")
-                            print("1.calculate rectangle")
-                            print("1.calculate triangle")
+                            print("2.calculate circle")
+                            print("3.calculate rectangle")
+                            print("4.calculate triangle")
+                            print("5.EXIT")
                             choice4=int(input("enter the choice"))
                             match choice4:
                                 case 1:
@@ -101,7 +122,7 @@ while True:
                                     print("area of square::",area)
                                 case 2:
                                     r=int(input("enter r for circle calculation"))
-                                    area=math.pi*math.pow(r)
+                                    area=math.pi*math.pow(r,2)
                                     print("area of square::",area)
                                 case 3:
                                     length=int(input("enter length for rectangle calculation"))
@@ -113,7 +134,11 @@ while True:
                                     height=int(input("enter height for triangle calculation"))
                                     area=0.5*base*height
                                     print("area of tringle::",area)
+                                case 5:
+                                    print("THANK YOU FOR USING")
+                                    break
                     case 5:
+                        print("THANK YOU FOR USING MATH MODULE")
                         break
         case 3:
             while True:
@@ -122,12 +147,12 @@ while True:
                 print("3.Create Random Password")
                 print("4.Generate Random OTP")
                 print("5.BACK TO MAIN MENU")
-                choice5=int(input("enter the choice"))
+                choice5=int(input("enter the choice::"))
                 match choice5:
                     case 1:
                         start_num=int(input("enter the start number"))
                         last_num=int(input("enter the last number"))
-                        print("random number :",random.randint(start_num,last_num))
+                        print("random number between them :",random.randint(start_num,last_num))
                     case 2:
                         list1=[]
                         end_num=int(input("enter the end number"))
@@ -140,13 +165,14 @@ while True:
                     case 3:
                         length=int(input("enter the length of password: "))
                         character=string.ascii_letters+string.digits
-                        password=(random.choices(character,k=length))
+                        password=''.join(random.choices(character,k=length))
                         print(password)
                     case 4:
                         length=int(input("enter the length of password: "))
                         otp=''.join(random.choices(string.digits,k=length))
                         print(otp)
                     case 5:
+                        print("THANK YOU FOR USING DATE AND TIME MODULE")
                         break
                         
         case 4:
@@ -160,7 +186,7 @@ while True:
                 print("3.Read  from a file")
                 print("4.Append to a file ")
                 print("5.Back to main menu")
-                choice6=int(input("enter the choice"))
+                choice6=int(input("ENTER THE CHOICE::"))
                 match choice6:
                     case 1:
                         create_file()
@@ -171,6 +197,7 @@ while True:
                     case 4:
                         apppend_file()
                     case 5:
+                        print("THANK YOU FOR USING DATE AND TIME MODULE")
                         break
                 
 

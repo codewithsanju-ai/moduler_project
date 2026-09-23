@@ -1,6 +1,6 @@
 def create_file():
     try:
-        file_name=input("enter the file name")
+        file_name=input("enter the file name::")
         with open(file_name+".txt",'x') as file:
             file.write('file created !!!!!!'+"\n")
     except FileExistsError:
@@ -8,8 +8,8 @@ def create_file():
 
 def write_file():
     try:
-        file_name=input("enter the file name")
-        data=input("enter the txt you want to write in the file")
+        file_name=input("enter the file name::")
+        data=input("enter the txt you want to write in the file::")
         with open(file_name+".txt",'a') as file:
             file.write(data+"\n")
             
@@ -18,7 +18,7 @@ def write_file():
         print("file not found ")
 def read_file():
     try:
-        file_name=input("enter the file name")
+        file_name=input("enter the file name::")
         with open(file_name+".txt",'r') as file:
             res=file.read()
             print(res)
@@ -27,8 +27,8 @@ def read_file():
         print("file not found")
 def apppend_file():
     try:
-        file_name=input("enter the file name")
-        data=input("enter the txt you want to append in the file")
+        file_name=input("enter the file name;:")
+        data=input("enter the txt you want to append in the file::")
         with open(file_name+".txt","a") as file:
             file.write(data+"\n")
     except FileNotFoundError:
