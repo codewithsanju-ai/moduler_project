@@ -3,7 +3,7 @@ import math
 import random
 import uuid
 import string
-from file_module import *
+from utilities.file_module import *
 
 while True:
     print("WELCOME TO MULTI-UTILITY TULLKIT ")
@@ -47,6 +47,7 @@ while True:
                         minute = int(input("Enter minute: "))
                         second = int(input("Enter second: "))
                         custom_date=datetime.datetime(year,month,day,hour,minute,second)
+                        formatted_date = custom_date.strftime("%d-%m-%Y %H:%M:%S")
                         print("custom date ::",custom_date)
                     case 4:
                        input("Press ENTER to start...")
